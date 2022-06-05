@@ -200,6 +200,11 @@ body {
   text-decoration-color: var(--text-decoration-color);
   text-decoration-line: underline;
   text-align: left;
+  
+}
+
+.experiences__company-header-description {
+  padding-left: 0.5em;
   margin-bottom: 20px;
 }
 
@@ -218,12 +223,38 @@ body {
 .experiences__company-project-name {
   color: var(--primary-text-color);
   text-align: left;
+  
+}
+
+.experiences__company-project-description {
+  font-size: 0.9rem;
+  padding-left: 0.5em;
   margin-bottom: 10px;
 }
 
 .experiences__company-project-responsibilities {
   color: var(--secondary-text-color);
   padding-left: 20px;
+}
+
+.experiences__company-project-responsibilities li{
+  list-style-type: none;
+}
+
+.experiences__company-project-responsibilities li:before{
+  content: "> ";
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: text-bottom;
+}
+
+.spoiler-text {
+  background-color: var(--secondary-text-color);
+  transition: all 0.25s;
+}
+
+.experiences__company-project-responsibilities li:hover .spoiler-text {
+  background-color: transparent;
 }
 
 .additional-info {
