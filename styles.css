@@ -253,7 +253,11 @@ body {
   transition: all 0.25s;
 }
 
-.experiences__company-project-responsibilities li:hover .spoiler-text {
+li:hover .spoiler-text {
+  background-color: transparent;
+}
+
+p:hover .spoiler-text {
   background-color: transparent;
 }
 
