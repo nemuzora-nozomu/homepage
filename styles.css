@@ -14,15 +14,38 @@ body {
   --secondary-text-color: #5c5c62;
   --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
+  --darkmode-icon-color: #181820;
   --border-color: #346be245;
   --text-decoration-color: #346be2;
   --warning-color: rgb(185, 24, 24);
+  --background-color: #fff;
+}
+
+body.dark {
+  background-color: #0d1117;
+
+  --primary-text-color: #f1f1f1;
+  --secondary-text-color: #c1c1cc;
+  --durability-text-color: #b8b8c2;
+  --icon-color: #f1f1f1;
+  --darkmode-icon-color: #f1f1f1;
+  --border-color: #ff751981;
+  --text-decoration-color: #ff7519;
+  --warning-color: rgb(255, 0, 0);
+  --resume-background-color: #1a2029;
+}
+
+body.dark .resume {
+  box-shadow: none;
+  border: 1px solid #363d44;
+  
 }
 
 .container {
   margin: 0 auto;
   padding: 0 30px;
   max-width: 900px;
+  
 }
 
 .fh {
@@ -38,6 +61,9 @@ body {
 }
 
 .resume {
+  overflow: hidden;
+  border-radius: 40px;
+  background-color: var(--resume-background-color);
   margin: 50px auto;
   border: 1px solid #f5f5f5;
   box-shadow: 1px 1px 7px 7px #f5f5f5;
@@ -93,7 +119,7 @@ body {
   font-size: 1.5rem;
   margin-bottom: 30px;
   display: inline-block;
-  padding: .5em;
+  padding: .8em .5em .2em;
 
   position: relative;
   left: 50%;
@@ -101,12 +127,12 @@ body {
 
   background: linear-gradient(to left, transparent 50%, #f7e018 50%) right;
   background-size: 200%;
-  transition: .5s ease-out;
+  transition: .5s ease-in-out;
 }
 
 .contact-info__sub-header:hover {
   background-position: left;
-  color: var(--primary-text-color);
+  color: #181820;
 }
 
 .contact-info__block {
@@ -135,7 +161,7 @@ body {
 	width: 100%;
 	height: 0.1em;
 	background-color: var(--text-decoration-color);
-	transition: transform 300ms;
+	transition: transform .3s;
   opacity: 1;
   transform: scale(0);
   transform-origin: center;
@@ -255,6 +281,7 @@ body {
 }
 
 .experiences__company-header-description {
+  color: var(--secondary-text-color);
   padding-left: 0.5em;
   margin-bottom: 20px;
 }
@@ -278,6 +305,7 @@ body {
 }
 
 .experiences__company-project-description {
+  color: var(--secondary-text-color);
   font-size: 0.9rem;
   padding-left: 0.5em;
   margin-bottom: 10px;
@@ -360,6 +388,54 @@ p:hover .spoiler-text {
 }
 
 footer {
+  color: var(--secondary-text-color);
   text-align: center;
   font-size: 0.8rem;
+}
+
+/* Darkmode switch styles */
+
+.darkmode-switch {
+  background-color: var(--resume-background-color);
+  cursor: pointer;
+  position: fixed;
+  top: 5%;
+  left: 3%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5em;
+  border: 1px solid #f5f5f5;
+  box-shadow: 1px 1px 4px 4px #ebebeb;
+  border-radius: 20px;
+  transition: transform .25s;
+  z-index: 2;
+}
+
+.darkmode-switch:hover,
+.darkmode-switch:active {
+  transform: scale(1.1);
+}
+
+body.dark .darkmode-switch {
+  box-shadow: none;
+  border: 1px solid #363d44;
+}
+
+.darkmode-switch__icon path {
+  fill: var(--darkmode-icon-color);
+}
+
+.night {
+  display: none;
+}
+
+body.dark .night {
+  display: block;
+}
+
+body.dark .day {
+  display: none;
 }
