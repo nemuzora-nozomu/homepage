@@ -10,6 +10,7 @@ body {
   background: linear-gradient(to right bottom, #d16ba5, #b989da, #88aafd, #43c6ff, #00deff, #00e9f6, #00f4e5, #34fcce, #57feb5, #78fe9a, #99fe7d, #bafb5f);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
 
   --primary-text-color: #181820;
@@ -476,7 +477,7 @@ footer {
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #39b67c;
+    background-color: #3ece8b;
     border-radius: 7px;
     border: 0px solid #ffffff;
   }
