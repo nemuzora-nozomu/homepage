@@ -483,3 +483,7 @@ svg path {
 .resume {
   transition: box-shadow .3s, border-color .3s;
 }
+
+.text-hint {
+  cursor: help;
+}
