@@ -454,3 +454,29 @@ footer {
   text-align: center;
   font-size: 0.8rem;
 }
+
+.default-footer {
+  display: none;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #31c94a #e8e8e8;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #e8e8e8;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #39b67c;
+    border-radius: 7px;
+    border: 0px solid #ffffff;
+  }
