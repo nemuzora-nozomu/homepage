@@ -92,10 +92,6 @@ body.dark .resume {
   .contact-info__block:not(:last-child) {
     margin-bottom: 20px;
   }
-
-  .experiences {
-    margin-right: 0;
-  }
 }
 
 
