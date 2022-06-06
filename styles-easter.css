@@ -340,6 +340,7 @@ body {
   font-size: 0.9rem;
   padding-left: 0.5em;
   margin-bottom: 10px;
+  max-width: 60%;
 }
 
 .experiences__company-project-responsibilities {
@@ -435,7 +436,7 @@ p:hover .spoiler-text {
   flex-direction: column;
   /* align-items: center; */
   gap: .8em;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 .additional-info__languages-header {
