@@ -329,7 +329,7 @@ body.dark .resume {
 
 .spoiler-text {
   background-color: var(--secondary-text-color);
-  transition: all 0.25s;
+  transition: all 0.3s;
 }
 
 li:hover .spoiler-text {
@@ -438,4 +438,36 @@ body.dark .night {
 
 body.dark .day {
   display: none;
+}
+
+h1,
+h3,
+p,
+li,
+footer,
+.contact-info__item span,
+.experiences__company-header-durability,
+.additional-info__languages-item
+ {
+  transition: color .3s;
+}
+
+.resume__block,
+.contact-info__avatar {
+  transition: border-color .3s;
+}
+
+body,
+.resume,
+.spoiler-text {
+  transition: background-color .3s;
+}
+
+svg path {
+  transition: fill .3s;
+}
+
+.darkmode-switch,
+.resume {
+  transition: box-shadow .3s, border-color .3s;
 }
