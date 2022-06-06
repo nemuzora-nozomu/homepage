@@ -17,12 +17,33 @@ body {
   --border-color: #346be245;
   --text-decoration-color: #346be2;
   --warning-color: rgb(185, 24, 24);
+  --background-color: #fff;
+}
+
+body.dark {
+  background-color: #0d1117;
+
+  --primary-text-color: #f1f1f1;
+  --secondary-text-color: #c1c1cc;
+  --durability-text-color: #b8b8c2;
+  --icon-color: #f1f1f1;
+  --border-color: #ff751981;
+  --text-decoration-color: #ff7519;
+  --warning-color: rgb(255, 0, 0);
+  --resume-background-color: #1a2029;
+}
+
+body.dark .resume {
+  box-shadow: none;
+  border: 1px solid #363d44;
+  
 }
 
 .container {
   margin: 0 auto;
   padding: 0 30px;
   max-width: 900px;
+  
 }
 
 .fh {
@@ -38,6 +59,9 @@ body {
 }
 
 .resume {
+  overflow: hidden;
+  border-radius: 40px;
+  background-color: var(--resume-background-color);
   margin: 50px auto;
   border: 1px solid #f5f5f5;
   box-shadow: 1px 1px 7px 7px #f5f5f5;
@@ -106,7 +130,7 @@ body {
 
 .contact-info__sub-header:hover {
   background-position: left;
-  color: var(--primary-text-color);
+  color: #181820;
 }
 
 .contact-info__block {
@@ -255,6 +279,7 @@ body {
 }
 
 .experiences__company-header-description {
+  color: var(--secondary-text-color);
   padding-left: 0.5em;
   margin-bottom: 20px;
 }
@@ -278,6 +303,7 @@ body {
 }
 
 .experiences__company-project-description {
+  color: var(--secondary-text-color);
   font-size: 0.9rem;
   padding-left: 0.5em;
   margin-bottom: 10px;
@@ -360,6 +386,17 @@ p:hover .spoiler-text {
 }
 
 footer {
+  color: var(--secondary-text-color);
   text-align: center;
   font-size: 0.8rem;
+}
+
+/* Darkmode switch styles */
+
+.darkmode-switch {
+  
+}
+
+.darkmode-switch__icon {
+  width: 30px;
 }
