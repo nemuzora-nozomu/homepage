@@ -358,3 +358,8 @@ p:hover .spoiler-text {
 .additional-info__languages-item {
   color: var(--secondary-text-color);
 }
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+}
