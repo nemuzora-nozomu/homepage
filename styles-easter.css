@@ -12,6 +12,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
+  position: relative;
 
   --primary-text-color: #181820;
   --secondary-text-color: #2c2c2c;
@@ -31,7 +32,7 @@ body {
   position: relative;
   max-width: 900px;
   /* overflow: hidden; */
-  margin: 100px auto;
+  margin: 100px auto 0;
 }
 
 .resume__block {
@@ -61,6 +62,15 @@ body {
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   backdrop-filter: blur(10px);
+}
+
+.contact-info__header {
+  color: var(--primary-text-color);
+  font-size: 2.3rem;
+}
+
+.contact-info__sub-header {
+  color: var(--primary-text-color);
 }
 
 .fh {
@@ -364,8 +374,8 @@ p:hover .spoiler-text {
   display: block;
   margin: 0 auto;
   width: 50%;
-  height: 5px;
-  background-color: rgba(255, 255, 255, 0.5);
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .additional-info__education::before {
@@ -454,6 +464,7 @@ footer {
   color: var(--secondary-text-color);
   text-align: center;
   font-size: 0.8rem;
+  padding-bottom: 16rem;
 }
 
 .default-footer {
@@ -480,4 +491,12 @@ footer {
     background-color: #3ece8b;
     border-radius: 7px;
     border: 0px solid #ffffff;
+  }
+
+  .footer__takagi {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
   }

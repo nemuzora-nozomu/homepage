@@ -401,6 +401,10 @@ footer {
   display: none;
 }
 
+.footer__takagi {
+  display: none;
+}
+
 /* Darkmode switch styles */
 
 .darkmode-switch {
