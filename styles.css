@@ -14,8 +14,9 @@ body {
   --secondary-text-color: #5c5c62;
   --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
-  --border-color: #ff9a0045;
-  --text-decoration-color: #ff9a00;
+  --border-color: #346be245;
+  --text-decoration-color: #346be2;
+  --warning-color: rgb(185, 24, 24);
 }
 
 .container {
@@ -27,13 +28,13 @@ body {
 .fh {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .fv {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .resume {
@@ -45,7 +46,7 @@ body {
 }
 
 .resume__block {
-  border-bottom: 3px solid var(--border-color);
+  border-bottom: 5px solid var(--border-color);
   padding-bottom: 30px;
   margin-bottom: 15px;
 }
@@ -93,7 +94,7 @@ body {
 .contact-info__block {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .contact-info__block--center {
@@ -106,7 +107,6 @@ body {
   display: flex;
   justify-content: start;
   position: relative;
-  padding: 0.2em 0;
 }
 
 .contact-info__item::after {
@@ -130,7 +130,7 @@ body {
 }
 
 .contact-info__item:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .contact-info__item-icon-wrapper {
@@ -144,6 +144,11 @@ body {
   fill: var(--icon-color);
 }
 
+.contact-info__item:hover .contact-info__item-icon.warning path {
+  transition: fill 0.5s;
+  fill: var(--warning-color);
+}
+
 .contact-info__item-icon {
   height: 1.1428rem;
   vertical-align: text-bottom;
@@ -151,8 +156,8 @@ body {
 
 .contact-info__avatar {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border: 3px solid;
   border-color: var(--text-decoration-color);
