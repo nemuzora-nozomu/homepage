@@ -97,6 +97,10 @@ body.dark .resume {
 
 /* Contact info styles */
 
+.video-header {
+  display: none;
+}
+
 .contact-info__header,
 .contact-info__sub-header {
   text-align: center;
@@ -161,6 +165,10 @@ body.dark .resume {
   opacity: 1;
   transform: scale(0);
   transform-origin: center;
+}
+
+.contact-info__item.easter {
+  display: none;
 }
 
 .contact-info__item.warning::after {
@@ -387,6 +395,10 @@ footer {
   color: var(--secondary-text-color);
   text-align: center;
   font-size: 0.8rem;
+}
+
+.easter-footer {
+  display: none;
 }
 
 /* Darkmode switch styles */
