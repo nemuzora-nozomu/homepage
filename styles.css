@@ -466,3 +466,8 @@ body,
 svg path {
   transition: fill .3s;
 }
+
+.darkmode-switch,
+.resume {
+  transition: box-shadow .3s, border-color .3s;
+}
