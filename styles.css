@@ -51,6 +51,7 @@ body {
   margin-bottom: 15px;
 }
 
+
 @media screen and (max-width: 576px) {
 
   .main-info,
@@ -82,13 +83,30 @@ body {
 .contact-info__header {
   color: var(--primary-text-color);
   margin-bottom: 15px;
+  font-size: 2.5rem;
   text-decoration-color: var(--text-decoration-color);
   text-decoration-line: underline;
 }
 
 .contact-info__sub-header {
   color: var(--secondary-text-color);
+  font-size: 1.5rem;
   margin-bottom: 30px;
+  display: inline-block;
+  padding: .5em;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: linear-gradient(to left, transparent 50%, #f7e018 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+}
+
+.contact-info__sub-header:hover {
+  background-position: left;
+  color: var(--primary-text-color);
 }
 
 .contact-info__block {
@@ -198,6 +216,7 @@ body {
 .skills__header {
   color: var(--secondary-text-color);
   text-align: center;
+  font-size: 1.5rem;
   margin-bottom: 15px;
 }
 
@@ -216,6 +235,7 @@ body {
 .experiences__header {
   color: var(--secondary-text-color);
   text-align: left;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -303,6 +323,7 @@ p:hover .spoiler-text {
 .additional-info__education-header {
   color: var(--secondary-text-color);
   text-align: left;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -330,6 +351,7 @@ p:hover .spoiler-text {
 .additional-info__languages-header {
   color: var(--secondary-text-color);
   text-align: left;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
