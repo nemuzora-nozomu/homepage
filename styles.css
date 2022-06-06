@@ -121,7 +121,10 @@ body {
   opacity: 1;
   transform: scale(0);
   transform-origin: center;
-  
+}
+
+.contact-info__item.warning::after {
+  background-color: var(--warning-color);
 }
 
 .contact-info__item:hover::after,
@@ -144,7 +147,7 @@ body {
   fill: var(--icon-color);
 }
 
-.contact-info__item:hover .contact-info__item-icon.warning path {
+.contact-info__item.warning:hover .contact-info__item-icon path {
   transition: fill 0.5s;
   fill: var(--warning-color);
 }
