@@ -14,8 +14,9 @@ body {
   --secondary-text-color: #5c5c62;
   --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
-  --border-color: #ff9a0045;
-  --text-decoration-color: #ff9a00;
+  --border-color: #346be245;
+  --text-decoration-color: #346be2;
+  --warning-color: rgb(185, 24, 24);
 }
 
 .container {
@@ -27,13 +28,13 @@ body {
 .fh {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .fv {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .resume {
@@ -45,197 +46,183 @@ body {
 }
 
 .resume__block {
-  border-bottom: 3px solid var(--border-color);
+  border-bottom: 5px solid var(--border-color);
   padding-bottom: 30px;
   margin-bottom: 15px;
 }
+
 
 @media screen and (max-width: 576px) {
 
   .main-info,
   .contact_info_container {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .contact_info_container {
-      align-items: center;
+    align-items: center;
   }
 
   .contact-info__block:not(:last-child) {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .experiences {
-      margin-right: 0;
+    margin-right: 0;
   }
 }
 
 
-  .contact-info__header,
-  .contact-info__sub-header {
-      text-align: center;
-  }
+/* Contact info styles */
 
-  .contact-info__header {
-      color: var(--primary-text-color);
-      margin-bottom: 15px;
-      text-decoration-color: var(--text-decoration-color);
-      text-decoration-line: underline;
-  }
+.contact-info__header,
+.contact-info__sub-header {
+  text-align: center;
+}
 
-  .contact-info__sub-header {
-      color: var(--secondary-text-color);
-      margin-bottom: 30px;
-  }
+.contact-info__header {
+  color: var(--primary-text-color);
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  text-decoration-color: var(--text-decoration-color);
+  text-decoration-line: underline;
+}
 
-  .contact-info__block {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
+.contact-info__sub-header {
+  color: var(--secondary-text-color);
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  display: inline-block;
+  padding: .5em;
 
-  .contact-info__block--center {
-      justify-content: center;
-  }
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 
-  .contact-info__item {
-      color: var(--secondary-text-color);
-      text-decoration: none;
-      display: flex;
-      justify-content: start;
-  }
+  background: linear-gradient(to left, transparent 50%, #f7e018 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+}
 
-  .contact-info__item:not(:last-child) {
-      margin-bottom: 20px;
-  }
+.contact-info__sub-header:hover {
+  background-position: left;
+  color: var(--primary-text-color);
+}
 
-  .contact-info__item-icon-wrapper {
-      margin-right: 10px;
-      width: 20px;
-      display: flex;
-      justify-content: center;
-  }
+.contact-info__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
-  .contact-info__item-icon path {
-      fill: var(--icon-color);
-  }
+.contact-info__block--center {
+  justify-content: center;
+}
 
-  .contact-info__item-icon {
-      height: 1.1428rem;
-      vertical-align: text-bottom;
-  }
+.contact-info__item {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  display: flex;
+  justify-content: start;
+  position: relative;
+}
 
-  .contact-info__avatar {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border: 3px solid;
-      border-color: var(--text-decoration-color);
-  }
+.contact-info__item::after {
+  content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.1em;
+	background-color: var(--text-decoration-color);
+	transition: transform 300ms;
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
 
-  /* Contact info styles */
+.contact-info__item.warning::after {
+  background-color: var(--warning-color);
+}
 
-  .contact-info__header,
-  .contact-info__sub-header {
-      text-align: center;
-  }
+.contact-info__item:hover::after,
+.contact-info__item:focus::after {
+  transform: scale(1);
+}
 
-  .contact-info__header {
-      color: var(--primary-text-color);
-      margin-bottom: 15px;
-      text-decoration-color: var(--text-decoration-color);
-      text-decoration-line: underline;
-  }
+.contact-info__item:not(:last-child) {
+  margin-bottom: 10px;
+}
 
-  .contact-info__sub-header {
-      color: var(--secondary-text-color);
-      margin-bottom: 30px;
-  }
+.contact-info__item-icon-wrapper {
+  margin-right: 10px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+}
 
-  .contact-info__block {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-  }
+.contact-info__item-icon path {
+  fill: var(--icon-color);
+}
 
-  .contact-info__block--center {
-      justify-content: center;
-  }
+.contact-info__item.warning:hover .contact-info__item-icon path {
+  transition: fill 0.5s;
+  fill: var(--warning-color);
+}
 
-  .contact-info__item {
-      color: var(--secondary-text-color);
-      text-decoration: none;
-      display: flex;
-      justify-content: start;
-  }
+.contact-info__item-icon {
+  height: 1.1428rem;
+  vertical-align: text-bottom;
+}
 
-  .contact-info__item:not(:last-child) {
-      margin-bottom: 20px;
-  }
+.contact-info__avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid;
+  border-color: var(--text-decoration-color);
+}
 
-  .contact-info__item-icon-wrapper {
-      margin-right: 10px;
-      width: 20px;
-      display: flex;
-      justify-content: center;
-  }
+/* Intro and skill styles */
 
-  .contact-info__item-icon path {
-      fill: var(--icon-color);
-  }
-
-  .contact-info__item-icon {
-      height: 1.1428rem;
-      vertical-align: text-bottom;
-  }
-
-  .contact-info__avatar {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border: 3px solid;
-      border-color: var(--text-decoration-color);
-  }
-
-  /* Intro and skill styles */
-
-  .intro {
-    display: flex;
-    justify-content: start;
+.intro {
+  display: flex;
+  justify-content: start;
 }
 
 .intro__icon-wrapper {
-    margin-right: 30px;
-    width: 30px;
-    display: flex;
-    justify-content: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .intro__icon {
-    height: 1.1428rem;
-    vertical-align: text-bottom;
+  height: 1.5rem;
+  vertical-align: text-bottom;
 }
 
 .intro__icon path {
-    fill: var(--text-decoration-color);
+  fill: var(--text-decoration-color);
 }
 
 .intro_text {
-    color: var(--secondary-text-color);
-    text-align: justify;
+  color: var(--secondary-text-color);
+  padding-top: 5px;
 }
 
 .skills__header {
-    color: var(--secondary-text-color);
-    text-align: center;
-    margin-bottom: 15px;
+  color: var(--secondary-text-color);
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 .skills__text {
-    color: var(--secondary-text-color);
-    text-align: justify;
+  color: var(--secondary-text-color);
+  text-align: justify;
 }
 
 /* Experience and additional info styles */
@@ -248,6 +235,7 @@ body {
 .experiences__header {
   color: var(--secondary-text-color);
   text-align: left;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -263,6 +251,11 @@ body {
   text-decoration-color: var(--text-decoration-color);
   text-decoration-line: underline;
   text-align: left;
+
+}
+
+.experiences__company-header-description {
+  padding-left: 0.5em;
   margin-bottom: 20px;
 }
 
@@ -281,12 +274,42 @@ body {
 .experiences__company-project-name {
   color: var(--primary-text-color);
   text-align: left;
+
+}
+
+.experiences__company-project-description {
+  font-size: 0.9rem;
+  padding-left: 0.5em;
   margin-bottom: 10px;
 }
 
 .experiences__company-project-responsibilities {
   color: var(--secondary-text-color);
   padding-left: 20px;
+}
+
+.experiences__company-project-responsibilities li {
+  list-style-type: none;
+}
+
+.experiences__company-project-responsibilities li:before {
+  content: "> ";
+  font-size: 0.75rem;
+  font-weight: 600;
+  vertical-align: text-bottom;
+}
+
+.spoiler-text {
+  background-color: var(--secondary-text-color);
+  transition: all 0.25s;
+}
+
+li:hover .spoiler-text {
+  background-color: transparent;
+}
+
+p:hover .spoiler-text {
+  background-color: transparent;
 }
 
 .additional-info {
@@ -300,6 +323,7 @@ body {
 .additional-info__education-header {
   color: var(--secondary-text-color);
   text-align: left;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -327,9 +351,15 @@ body {
 .additional-info__languages-header {
   color: var(--secondary-text-color);
   text-align: left;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
 .additional-info__languages-item {
   color: var(--secondary-text-color);
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
 }
